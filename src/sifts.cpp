@@ -3,6 +3,7 @@
 // Email: igor.bogoslavskyi@uni-bonn.de.
 
 #include "include/sifts.h"
+#include <opencv2/highgui/highgui.hpp>
 #include <string>
 #include <vector>
 
