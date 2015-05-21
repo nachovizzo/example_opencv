@@ -41,7 +41,7 @@ int main(int argc, char const *argv[]) {
     cout << "query vector is \n" << query << endl << endl;
 
     // search the nearest vector to it
-    int k = 1;
+    int k = 2;
     Mat nearestVectorIdx(1, k, DataType<int>::type);
     Mat nearestVectorDist(1, k, DataType<float>::type);
     kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
@@ -50,8 +50,15 @@ int main(int argc, char const *argv[]) {
     float closestDist = nearestVectorDist.at<float>(0, 0);
     cout << "Closest idx = " << closestIdx
          << ", with distance = " << closestDist << endl;
-    cout << "closest vector is data[" << closestIdx << "]\n"
-         << data.row(closestIdx) << endl;
+    cout << "Closest vector is data[" << closestIdx << "]\n"
+         << data.row(closestIdx) << endl << endl;
+
+    int secondClosestIdx = nearestVectorIdx.at<int>(0, 1);
+    float secondClosestDist = nearestVectorDist.at<float>(0, 1);
+    cout << "Second closest idx = " << secondClosestIdx
+         << ", with distance = " << secondClosestDist << endl;
+    cout << "Second closest vector is data[" << secondClosestIdx << "]\n"
+         << data.row(secondClosestIdx) << endl;
 
     return 0;
 }
