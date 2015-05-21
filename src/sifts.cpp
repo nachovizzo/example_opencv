@@ -27,8 +27,7 @@ Mat computeSifts(const string& fileName, Mat& imageWithKeypoints) {
     detector.detect(input, keypoints);
 
     // present the keypoints on the image
-    drawKeypoints(input, keypoints, imageWithKeypoints,
-                   Scalar::all(-1), DrawMatchesFlags::DEFAULT);
+    drawKeypoints(input, keypoints, imageWithKeypoints);
 
     // extract the descriptors
     SiftDescriptorExtractor extractor;
