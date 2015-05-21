@@ -44,7 +44,7 @@ int main(int argc, char const *argv[]) {
     int k = 2;
     Mat nearestVectorIdx(1, k, DataType<int>::type);
     Mat nearestVectorDist(1, k, DataType<float>::type);
-    kdtree.knnSearc(query, nearestVectorIdx, nearestVectorDist, k);
+    kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
 
     int closestIdx = nearestVectorIdx.at<int>(0, 0);
     float closestDist = nearestVectorDist.at<float>(0, 0);
