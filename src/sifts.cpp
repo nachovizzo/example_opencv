@@ -21,7 +21,7 @@ Mat computeSifts(const string& fileName, Mat& imageWithKeypoints) {
     const Mat input = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
     Mat descriptors;
 
-    // detect SIFT features
+    // detect key points
     SiftFeatureDetector detector;
     vector<KeyPoint> keypoints;
     detector.detect(input, keypoints);
@@ -29,7 +29,7 @@ Mat computeSifts(const string& fileName, Mat& imageWithKeypoints) {
     // present the keypoints on the image
     drawKeypoints(input, keypoints, imageWithKeypoints);
 
-    // extract the descriptors
+    // extract the SIFT descriptors
     SiftDescriptorExtractor extractor;
     extractor.compute(input, keypoints, descriptors);
     return descriptors;
