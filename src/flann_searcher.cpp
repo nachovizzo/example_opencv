@@ -25,7 +25,7 @@ int main(int argc, char const *argv[]) {
     int maxDataIdx = 100;
     for (int i = 0; i < maxDataIdx; i += step) {
         Mat someVector(rowsNum, colsNum,
-                       DataType<float>::type, static_cast<float>(i));
+                       DataType<float>::type, (float) i);
         data.push_back(someVector);
     }
     cout << "whole data is \n" << data << endl << endl;
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[]) {
     int k = 2;
     Mat nearestVectorIdx(1, k, DataType<int>::type);
     Mat nearestVectorDist(1, k, DataType<float>::type);
-    kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
+    kdtree.knnSearc(query, nearestVectorIdx, nearestVectorDist, k);
 
     int closestIdx = nearestVectorIdx.at<int>(0, 0);
     float closestDist = nearestVectorDist.at<float>(0, 0);

@@ -5,7 +5,7 @@ using namespace cv;
 
 int main(int argc, char const *argv[]) {
     Mat image;
-    image = imread("../img/lenna.png", CV_LOAD_IMAGE_COLOR );
+    image = imread("../img/lenna.png", CV_LOAD_IMAGE_GRAYSCALE );
 
     if ( !image.data ) {
         printf("No image data \n");
@@ -16,6 +16,5 @@ int main(int argc, char const *argv[]) {
 
     waitKey(0);
 
-    return 0;
     return 0;
 }
