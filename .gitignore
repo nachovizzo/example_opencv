@@ -111,3 +111,6 @@ cmake_install.cmake
 install_manifest.txt
 # added by GitSavvy
 /bin/
+
+build/
+results/
