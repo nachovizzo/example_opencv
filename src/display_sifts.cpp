@@ -18,8 +18,8 @@ int main() {
   cv::namedWindow("SIFT vector as image", cv::WINDOW_AUTOSIZE);
   imshow("SIFT vector as image", descriptors);
 
-  printf("Number of SIFTs: %d\n", descriptors.rows);
-  printf("Size of each SIFT: %d\n", descriptors.cols);
+  std::cout << "Number of SIFTs: " << descriptors.rows << "\n"
+            << "Size of each SIFT: " << descriptors.cols << "\n";
 
   cv::waitKey(0);
 
