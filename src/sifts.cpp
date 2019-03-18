@@ -5,6 +5,7 @@
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <sifts.h>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/xfeatures2d/nonfree.hpp>
 #include <string>
 #include <vector>
 

@@ -4,25 +4,24 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <sifts.h>
-#include <stdio.h>
+#include <iostream>
 #include <opencv2/highgui/highgui.hpp>
-using namespace std;
-using namespace cv;
+#include <opencv2/xfeatures2d/nonfree.hpp>
 
 int main() {
-  Mat descriptorImage;
-  Mat descriptors = computeSifts("../img/lenna.png", descriptorImage);
+  cv::Mat descriptorImage;
+  cv::Mat descriptors = computeSifts("../../img/lenna.png", descriptorImage);
 
-  namedWindow("SIFT detections", WINDOW_AUTOSIZE);
+  cv::namedWindow("SIFT detections", cv::WINDOW_AUTOSIZE);
   imshow("SIFT detections", descriptorImage);
 
-  namedWindow("SIFT vector as image", WINDOW_AUTOSIZE);
+  cv::namedWindow("SIFT vector as image", cv::WINDOW_AUTOSIZE);
   imshow("SIFT vector as image", descriptors);
 
   printf("Number of SIFTs: %d\n", descriptors.rows);
   printf("Size of each SIFT: %d\n", descriptors.cols);
 
-  waitKey(0);
+  cv::waitKey(0);
 
   return 0;
 }
