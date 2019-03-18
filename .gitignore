@@ -16,6 +16,9 @@ Session.vim
 *~
 
 
+###VSCode###
+*.vscode
+
 ###SublimeText###
 
 # cache files for sublime text
