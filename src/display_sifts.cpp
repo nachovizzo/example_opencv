@@ -3,9 +3,9 @@
 // @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
+#include <sifts.h>
 #include <stdio.h>
 #include <opencv2/highgui/highgui.hpp>
-#include "include/sifts.h"
 using namespace std;
 using namespace cv;
 

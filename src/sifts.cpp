@@ -3,7 +3,7 @@
 // @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
-#include "include/sifts.h"
+#include <sifts.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <string>
 #include <vector>
