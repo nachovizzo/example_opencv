@@ -10,5 +10,4 @@
 #include <opencv2/nonfree/nonfree.hpp>
 #include <string>
 
-cv::Mat computeSifts(const std::string& fileName,
-                     cv::Mat& imageWithKeypoints);
+cv::Mat computeSifts(const std::string& fileName, cv::Mat& imageWithKeypoints);

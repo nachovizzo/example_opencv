@@ -4,62 +4,62 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <stdio.h>
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <iostream>
 
-using std::cout;
-using std::endl;
+using cv::DataType;
 using cv::Mat;
 using cv::Scalar;
-using cv::DataType;
+using std::cout;
+using std::endl;
 
 int main(int argc, char const *argv[]) {
-    // init some parameters
-    int rowsNum = 1;
-    int colsNum = 10;
-    Mat data;
+  // init some parameters
+  int rowsNum = 1;
+  int colsNum = 10;
+  Mat data;
 
-    // fill the dummy data
-    int step = 9;
-    int maxDataIdx = 100;
-    for (int i = 0; i < maxDataIdx; i += step) {
-        Mat someVector(rowsNum, colsNum,
-                       DataType<float>::type, (float) i);
-        data.push_back(someVector);
-    }
-    cout << "whole data is \n" << data << endl << endl;
+  // fill the dummy data
+  int step = 9;
+  int maxDataIdx = 100;
+  for (int i = 0; i < maxDataIdx; i += step) {
+    Mat someVector(rowsNum, colsNum, DataType<float>::type, (float)i);
+    data.push_back(someVector);
+  }
+  cout << "whole data is \n" << data << endl << endl;
 
-    // create a kdtree for searching the data
-    cv::flann::KDTreeIndexParams indexParams(4);
-    cv::flann::Index kdtree(data, indexParams);
+  // create a kdtree for searching the data
+  cv::flann::KDTreeIndexParams indexParams(4);
+  cv::flann::Index kdtree(data, indexParams);
 
-    // create a query vector
-    int queryIdx = 50;
-    Mat query(rowsNum, colsNum,
-              DataType<float>::type, static_cast<float>(queryIdx));
-    cout << "query vector is \n" << query << endl << endl;
+  // create a query vector
+  int queryIdx = 50;
+  Mat query(rowsNum, colsNum, DataType<float>::type,
+            static_cast<float>(queryIdx));
+  cout << "query vector is \n" << query << endl << endl;
 
-    // search the nearest vector to it
-    int k = 2;
-    Mat nearestVectorIdx(1, k, DataType<int>::type);
-    Mat nearestVectorDist(1, k, DataType<float>::type);
-    kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
+  // search the nearest vector to it
+  int k = 2;
+  Mat nearestVectorIdx(1, k, DataType<int>::type);
+  Mat nearestVectorDist(1, k, DataType<float>::type);
+  kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
 
-    int closestIdx = nearestVectorIdx.at<int>(0, 0);
-    float closestDist = nearestVectorDist.at<float>(0, 0);
-    cout << "Closest idx = " << closestIdx
-         << ", with distance = " << closestDist << endl;
-    cout << "Closest vector is data[" << closestIdx << "]\n"
-         << data.row(closestIdx) << endl << endl;
+  int closestIdx = nearestVectorIdx.at<int>(0, 0);
+  float closestDist = nearestVectorDist.at<float>(0, 0);
+  cout << "Closest idx = " << closestIdx << ", with distance = " << closestDist
+       << endl;
+  cout << "Closest vector is data[" << closestIdx << "]\n"
+       << data.row(closestIdx) << endl
+       << endl;
 
-    int secondClosestIdx = nearestVectorIdx.at<int>(0, 1);
-    float secondClosestDist = nearestVectorDist.at<float>(0, 1);
-    cout << "Second closest idx = " << secondClosestIdx
-         << ", with distance = " << secondClosestDist << endl;
-    cout << "Second closest vector is data[" << secondClosestIdx << "]\n"
-         << data.row(secondClosestIdx) << endl;
+  int secondClosestIdx = nearestVectorIdx.at<int>(0, 1);
+  float secondClosestDist = nearestVectorDist.at<float>(0, 1);
+  cout << "Second closest idx = " << secondClosestIdx
+       << ", with distance = " << secondClosestDist << endl;
+  cout << "Second closest vector is data[" << secondClosestIdx << "]\n"
+       << data.row(secondClosestIdx) << endl;
 
-    return 0;
+  return 0;
 }

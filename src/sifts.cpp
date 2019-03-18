@@ -11,27 +11,27 @@
 using std::string;
 using std::vector;
 
-using cv::Mat;
-using cv::SiftFeatureDetector;
-using cv::SiftDescriptorExtractor;
-using cv::KeyPoint;
 using cv::DrawMatchesFlags;
+using cv::KeyPoint;
+using cv::Mat;
 using cv::Scalar;
+using cv::SiftDescriptorExtractor;
+using cv::SiftFeatureDetector;
 
 Mat computeSifts(const string& fileName, Mat& imageWithKeypoints) {
-    const Mat input = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
-    Mat descriptors;
+  const Mat input = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
+  Mat descriptors;
 
-    // detect key points
-    SiftFeatureDetector detector;
-    vector<KeyPoint> keypoints;
-    detector.detect(input, keypoints);
+  // detect key points
+  SiftFeatureDetector detector;
+  vector<KeyPoint> keypoints;
+  detector.detect(input, keypoints);
 
-    // present the keypoints on the image
-    drawKeypoints(input, keypoints, imageWithKeypoints);
+  // present the keypoints on the image
+  drawKeypoints(input, keypoints, imageWithKeypoints);
 
-    // extract the SIFT descriptors
-    SiftDescriptorExtractor extractor;
-    extractor.compute(input, keypoints, descriptors);
-    return descriptors;
+  // extract the SIFT descriptors
+  SiftDescriptorExtractor extractor;
+  extractor.compute(input, keypoints, descriptors);
+  return descriptors;
 }
