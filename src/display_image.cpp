@@ -1,3 +1,8 @@
+// @file      display_image.cpp
+// @author    Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
+// @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
+//
+// Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 

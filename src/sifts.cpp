@@ -1,7 +1,8 @@
-// Copyright Igor Bogoslavskyi, year 2015.
-// In case of any problems with the code please contact me.
-// Email: igor.bogoslavskyi@uni-bonn.de.
-
+// @file      sifts.cpp
+// @author    Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
+// @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
+//
+// Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include "include/sifts.h"
 #include <opencv2/highgui/highgui.hpp>
 #include <string>

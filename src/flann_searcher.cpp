@@ -1,7 +1,8 @@
-// Copyright Igor Bogoslavskyi, year 2015.
-// In case of any problems with the code please contact me.
-// Email: igor.bogoslavskyi@uni-bonn.de.
-
+// @file      flann_searcher.cpp
+// @author    Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
+// @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
+//
+// Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <stdio.h>
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
