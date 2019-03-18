@@ -15,8 +15,8 @@ using cv::DrawMatchesFlags;
 using cv::KeyPoint;
 using cv::Mat;
 using cv::Scalar;
-using cv::SiftDescriptorExtractor;
-using cv::SiftFeatureDetector;
+using cv::xfeatures2d::SiftDescriptorExtractor;
+using cv::xfeatures2d::SiftFeatureDetector;
 
 Mat computeSifts(const string& fileName, Mat& imageWithKeypoints) {
   const Mat input = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
