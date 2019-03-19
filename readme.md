@@ -1,10 +1,11 @@
-# OpenCV Example #
+# OpenCV3 Example #
 
 ## Prerequisites ##
 
-You need the SIFT implementation to run this code. Check if you have a file
-`nonfree.hpp` under `/usr/include/opencv2/xfeatures2d`. If it is there, you're
-fine. Otherwise, follow the procedure below.
+This example suppose that you have installed **`Ubuntu 18.04`** on your dev
+machine. You need the SIFT implementation to run this code. Check if you have a
+file `nonfree.hpp` under `/usr/include/opencv2/xfeatures2d`. If it is there,
+you're fine. Otherwise, follow the procedure below.
 
 You need to install the missing non-free version of OpenCV. To do that type the
 following in the terminal:
