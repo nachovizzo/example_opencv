@@ -11,11 +11,5 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${RESULTS_OUTPUT_DIRECTORY}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${RESULTS_OUTPUT_DIRECTORY}/bin)
 
 find_package(OpenCV 3 REQUIRED)
-find_package(Qt5 REQUIRED
-             COMPONENTS Core
-                        Widgets
-                        Test
-                        OpenGL
-                        Concurrent)
-
 add_subdirectory("src")
+
