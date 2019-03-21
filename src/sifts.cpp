@@ -3,11 +3,13 @@
 // @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
-#include <sifts.h>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/xfeatures2d/nonfree.hpp>
+#include "sifts.hpp"
+
 #include <string>
 #include <vector>
+
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/xfeatures2d/nonfree.hpp>
 
 using std::string;
 using std::vector;

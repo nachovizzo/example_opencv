@@ -4,8 +4,8 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #pragma once
+#include <string>
 
 #include <opencv2/core/core.hpp>
-#include <string>
 
 cv::Mat computeSifts(const std::string& fileName, cv::Mat& imageWithKeypoints);
