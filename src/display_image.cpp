@@ -1,6 +1,6 @@
-// @file      display_image.cpp
-// @author    Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
-// @mantainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
+// @file       display_image.cpp
+// @author     Igor Bogoslavskyi [igor.bogoslavskyi@gmail.com]
+// @maintainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <iostream>
