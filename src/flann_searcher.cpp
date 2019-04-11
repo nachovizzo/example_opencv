@@ -25,7 +25,7 @@ int main() {
   int step = 9;
   int maxDataIdx = 100;
   for (int i = 0; i < maxDataIdx; i += step) {
-    Mat vec(rowsNum, colsNum, DataType<float>::type, static_cast<float>(i));
+    Mat vec(rowsNum, colsNum, DataType<float>::type, static_cast<Scalar>(i));
     data.push_back(vec);
   }
   cout << "whole data is \n" << data << endl << endl;
@@ -37,7 +37,7 @@ int main() {
   // create a query vector
   int queryIdx = 50;
   Mat query(rowsNum, colsNum, DataType<float>::type,
-            static_cast<float>(queryIdx));
+            static_cast<Scalar>(queryIdx));
   cout << "query vector is \n" << query << endl << endl;
 
   // search the nearest vector to it
