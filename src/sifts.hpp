@@ -9,4 +9,4 @@
 #include <opencv2/core/core.hpp>
 
 cv::Mat computeSifts(const std::string& fileName,
-                     const cv::InputOutputArray& imageWithKeypoints);
+                     cv::InputOutputArray imageWithKeypoints);
