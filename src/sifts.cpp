@@ -17,7 +17,8 @@ using std::vector;
 using cv::xfeatures2d::SiftDescriptorExtractor;
 using cv::xfeatures2d::SiftFeatureDetector;
 
-cv::Mat computeSifts(const string& fileName, cv::Mat& imageWithKeypoints) {
+cv::Mat computeSifts(const string& fileName,
+                     const cv::InputOutputArray& imageWithKeypoints) {
   const cv::Mat input = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
   cv::Mat descriptors;
 
