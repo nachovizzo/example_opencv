@@ -15,7 +15,7 @@ using cv::Scalar;
 using std::cout;
 using std::endl;
 
-int main(int argc, char const *argv[]) {
+int main() {
   // init some parameters
   int rowsNum = 1;
   int colsNum = 10;
@@ -25,8 +25,8 @@ int main(int argc, char const *argv[]) {
   int step = 9;
   int maxDataIdx = 100;
   for (int i = 0; i < maxDataIdx; i += step) {
-    Mat someVector(rowsNum, colsNum, DataType<float>::type, (float)i);
-    data.push_back(someVector);
+    Mat vec(rowsNum, colsNum, DataType<float>::type, static_cast<float>(i));
+    data.push_back(vec);
   }
   cout << "whole data is \n" << data << endl << endl;
 

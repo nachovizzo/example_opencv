@@ -7,11 +7,11 @@
 
 #include <opencv2/opencv.hpp>
 
-int main(int argc, char const *argv[]) {
+int main() {
   cv::Mat image;
   image = cv::imread("../../img/lenna.png", CV_LOAD_IMAGE_GRAYSCALE);
 
-  if (!image.data) {
+  if (image.data == nullptr) {
     std::cerr << "No image data \n";
     return -1;
   }
