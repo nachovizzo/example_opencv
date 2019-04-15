@@ -11,11 +11,11 @@
 #include "sifts.hpp"
 
 int main() {
-  cv::Mat descriptorImage;
-  cv::Mat descriptors = computeSifts("../../img/lenna.png", descriptorImage);
+  cv::Mat descriptor_image;
+  cv::Mat descriptors = ComputeSifts("../../img/lenna.png", descriptor_image);
 
   cv::namedWindow("SIFT detections", cv::WINDOW_AUTOSIZE);
-  imshow("SIFT detections", descriptorImage);
+  imshow("SIFT detections", descriptor_image);
 
   cv::namedWindow("SIFT vector as image", cv::WINDOW_AUTOSIZE);
   imshow("SIFT vector as image", descriptors);

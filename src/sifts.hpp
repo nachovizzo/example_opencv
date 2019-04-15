@@ -10,6 +10,6 @@
 
 #include <opencv2/core/core.hpp>
 
-cv::Mat computeSifts(const std::string& fileName, cv::Mat& imageWithKeypoints);
+cv::Mat ComputeSifts(const std::string& fileName, cv::Mat& imageWithKeypoints);
 
 #endif  // SIFTS_HPP_

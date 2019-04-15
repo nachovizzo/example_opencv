@@ -17,49 +17,49 @@ using std::endl;
 
 int main() {
   // init some parameters
-  int rowsNum = 1;
-  int colsNum = 10;
+  int rows_num = 1;
+  int cols_num = 10;
   Mat data;
 
   // fill the dummy data
   int step = 9;
-  int maxDataIdx = 100;
-  for (int i = 0; i < maxDataIdx; i += step) {
-    Mat vec(rowsNum, colsNum, DataType<float>::type, static_cast<Scalar>(i));
+  int max_data_idx = 100;
+  for (int i = 0; i < max_data_idx; i += step) {
+    Mat vec(rows_num, cols_num, DataType<float>::type, static_cast<Scalar>(i));
     data.push_back(vec);
   }
   cout << "whole data is \n" << data << endl << endl;
 
   // create a kdtree for searching the data
-  cv::flann::KDTreeIndexParams indexParams(4);
-  cv::flann::Index kdtree(data, indexParams);
+  cv::flann::KDTreeIndexParams index_params(4);
+  cv::flann::Index kdtree(data, index_params);
 
   // create a query vector
-  int queryIdx = 50;
-  Mat query(rowsNum, colsNum, DataType<float>::type,
-            static_cast<Scalar>(queryIdx));
+  int query_idx = 50;
+  Mat query(rows_num, cols_num, DataType<float>::type,
+            static_cast<Scalar>(query_idx));
   cout << "query vector is \n" << query << endl << endl;
 
   // search the nearest vector to it
   int k = 2;
-  Mat nearestVectorIdx(1, k, DataType<int>::type);
-  Mat nearestVectorDist(1, k, DataType<float>::type);
-  kdtree.knnSearch(query, nearestVectorIdx, nearestVectorDist, k);
+  Mat nearest_vector_idx(1, k, DataType<int>::type);
+  Mat nearest_vector_dist(1, k, DataType<float>::type);
+  kdtree.knnSearch(query, nearest_vector_idx, nearest_vector_dist, k);
 
-  int closestIdx = nearestVectorIdx.at<int>(0, 0);
-  float closestDist = nearestVectorDist.at<float>(0, 0);
-  cout << "Closest idx = " << closestIdx << ", with distance = " << closestDist
-       << endl;
-  cout << "Closest vector is data[" << closestIdx << "]\n"
-       << data.row(closestIdx) << endl
+  int closest_idx = nearest_vector_idx.at<int>(0, 0);
+  float closest_dist = nearest_vector_dist.at<float>(0, 0);
+  cout << "Closest idx = " << closest_idx
+       << ", with distance = " << closest_dist << endl;
+  cout << "Closest vector is data[" << closest_idx << "]\n"
+       << data.row(closest_idx) << endl
        << endl;
 
-  int secondClosestIdx = nearestVectorIdx.at<int>(0, 1);
-  float secondClosestDist = nearestVectorDist.at<float>(0, 1);
-  cout << "Second closest idx = " << secondClosestIdx
-       << ", with distance = " << secondClosestDist << endl;
-  cout << "Second closest vector is data[" << secondClosestIdx << "]\n"
-       << data.row(secondClosestIdx) << endl;
+  int second_closest_idx = nearest_vector_idx.at<int>(0, 1);
+  float second_closest_dist = nearest_vector_dist.at<float>(0, 1);
+  cout << "Second closest idx = " << second_closest_idx
+       << ", with distance = " << second_closest_dist << endl;
+  cout << "Second closest vector is data[" << second_closest_idx << "]\n"
+       << data.row(second_closest_idx) << endl;
 
   return 0;
 }
