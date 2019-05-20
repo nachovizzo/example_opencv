@@ -1,0 +1,31 @@
+// @file      launch.json
+// @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
+//
+// Copyright (c) 2019 Ignacio Vizzo, all rights reserved
+//
+// This launch file will allow you to debug all the src file you have on your
+// project if they represent a excecutable target
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Debug Active File",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/results/bin/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/results/bin/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
