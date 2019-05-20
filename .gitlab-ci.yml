@@ -1,0 +1,34 @@
+# @file      .gitlab-ci.yml
+# @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
+#
+# Copyright (c) 2019 Ignacio Vizzo, all rights reserved
+#
+# Use this file wisely: You can add more stuff on it if you want. This template
+# will allow you to build your project every time you push changes to the git
+# server. If you have any error the gitlab server will send you a notification
+# to your email.
+# You could also provide tests to your project and add a testing
+# stage for the CI, this will allow you to run tests for every change you make
+# in the code. This is the defacto standard in industry nowadays. Ask google for
+# more information if you are curious.
+
+# In this image you have all the necessary stuff to work with OpenCV3
+image: gitlab.ipb.uni-bonn.de:4567/ipb-team/global/docker-images/ipb_opencv3
+
+stages:
+  - build
+
+build:
+  stage: build
+  before_script:
+    # Set up the terminal.
+    - export TERM=xterm
+    - export SHELL=/bin/bash
+    - mkdir -p build/
+  script:
+    - cd build/
+    - cmake -DCMAKE_BUILD_TYPE=Release ../
+    - make -j$(nproc --all) all
+    - cd ../
+  tags:
+    - docker
