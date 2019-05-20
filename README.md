@@ -1,11 +1,11 @@
-# OpenCV3 Example #
+# OpenCV3 Example
 
-## Prerequisites ##
+## Prerequisites
 
 This example suppose that you have installed **`Ubuntu 18.04`** on your dev
 machine. You need the SIFT implementation to run this code. Check if you have a
-file `nonfree.hpp` under `/usr/include/opencv2/xfeatures2d`. If it is there,
-you're fine. Otherwise, follow the procedure below.
+file `nonfree.hpp` under `/usr/include/opencv2/xfeatures2d/nonfree.hpp`. If it
+is there, you're fine. Otherwise, follow the procedure below.
 
 You need to install the missing non-free version of OpenCV. To do that type the
 following in the terminal:
@@ -16,12 +16,13 @@ sudo apt-get update
 sudo apt-get install libopencv-dev libopencv-contrib-dev
 ```
 
-## How to Build ##
+## How to Build
 
 Build is straightforward:
-```
-    mkdir build/
-    cd build/
-    cmake ..
-    make
+
+```sh
+mkdir build/
+cd build/
+cmake ..
+make
 ```
