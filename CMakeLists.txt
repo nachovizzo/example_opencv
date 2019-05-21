@@ -1,3 +1,8 @@
+# ~~~
+# @file      CMakeLists.txt
+# @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
+#
+# Copyright (c) 2019 Ignacio Vizzo, all rights reserved
 project(opencv_test)
 cmake_minimum_required(VERSION 3.1)
 
