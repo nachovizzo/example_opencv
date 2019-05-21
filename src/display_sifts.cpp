@@ -4,7 +4,6 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <iostream>
-
 #include <opencv2/highgui/highgui.hpp>
 #include "sifts.hpp"
 
