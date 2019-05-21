@@ -6,8 +6,6 @@
 #include <iostream>
 
 #include <opencv2/highgui/highgui.hpp>
-#include <opencv2/xfeatures2d/nonfree.hpp>
-
 #include "sifts.hpp"
 
 int main() {
