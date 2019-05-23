@@ -17,7 +17,7 @@ if __name__ == "__main__":
     # Read the image from file
     image = cv2.imread("../img/lenna.png", cv2.IMREAD_GRAYSCALE)
 
-    # Create SIFT detector and cobatin the keypoints and descriptors
+    # Create SIFT detector and obtain the keypoints and descriptors
     detector = cv2.xfeatures2d.SIFT_create()
     keypoints, descriptors = detector.detectAndCompute(image, None)
 
