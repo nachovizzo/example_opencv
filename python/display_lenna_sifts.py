@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @file      display_sifts.py
+# @file      display_lenna_sifts.py
 # @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
 #
 # Copyright (c) 2019 Ignacio Vizzo, all rights reserved
