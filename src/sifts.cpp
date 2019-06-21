@@ -5,6 +5,7 @@
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include "sifts.hpp"
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -17,7 +18,8 @@ using std::vector;
 using cv::xfeatures2d::SiftDescriptorExtractor;
 using cv::xfeatures2d::SiftFeatureDetector;
 
-cv::Mat ComputeSifts(const string& fileName, cv::Mat& imageWithKeypoints) {
+cv::Mat ComputeSifts(const string& fileName,
+                     const std::unique_ptr<cv::Mat>& imageWithKeypoints) {
   const cv::Mat kInput = cv::imread(fileName.c_str(), CV_LOAD_IMAGE_GRAYSCALE);
   cv::Mat descriptors;
 
@@ -27,7 +29,7 @@ cv::Mat ComputeSifts(const string& fileName, cv::Mat& imageWithKeypoints) {
   detector->detect(kInput, keypoints);
 
   // present the keypoints on the image
-  drawKeypoints(kInput, keypoints, imageWithKeypoints);
+  drawKeypoints(kInput, keypoints, *imageWithKeypoints);
 
   // extract the SIFT descriptors
   auto extractor = SiftDescriptorExtractor::create();
