@@ -1,0 +1,15 @@
+// @file      release_data.json
+// @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
+//
+// Copyright (c) 2019 Ignacio Vizzo, all rights reserved
+//
+// Variables to change
+// tag_name": "2019_NAME_1_NAME_2",
+// "description": "# Authors\n### NAME_1\n### NAME_2\n"
+// "description": "### Authors\n- Ignacio Vizzo\n- Cyrill Stachniss\n### Latest Artifacts\n[artifacts.zip](/uploads/e550dfc73e150a3e43e6e530ff30212a/artifacts.zip)"
+{
+  "name": "C++ Final Project",
+  "tag_name": "2019_Vizzo_Stachniss",
+  "ref": "master",
+  "description": "### Authors\n- Ignacio Vizzo\n- Cyrill Stachniss\n### Latest Artifacts\n[artifacts.zip](/uploads/218a3ca3a197aca3d6f24a1c5864ace2/artifacts.zip)"
+}
