@@ -56,10 +56,25 @@ you need to change some variables
 
 #### upload_artifacts.sh
 
+You might need to update your `.gitlab-ci.yml` configuration file to tell the CI
+that you want to store the artifacts of the build. In this step you must also
+specify for how long you want the CI to keep these artifacts. Usually 1 wekk is
+ok.
+
+```yml
+artifacts:
+  name: bow_artifacts
+  expire_in: 1 week
+  paths:
+    - results/
+```
+
 The build artifacts from the gitlab CI will be usually removed after 1
 week(depending on the `.gitlab-ci.yml` configuration file) In order to make sure
 that your submission will be safely stored we need to put this artifacts into a
-long-term storage place in your project.
+long-term storage place in your project. For this we you need to manually
+download the latest artifacts and run some script we've created to make this
+task less painful.
 
 There are many ways of doing this. The simplest one in our case would be to
 download the latest artifacts from your repository and push this artifacts to a
