@@ -30,5 +30,10 @@ build:
     - cmake -DCMAKE_BUILD_TYPE=Release ../
     - make -j$(nproc --all) all
     - cd ../
+  artifacts:
+    name: bow_artifacts
+    expire_in: 1 week
+    paths:
+      - results/
   tags:
     - docker
