@@ -29,6 +29,7 @@ build:
     - cd build/
     - cmake -DCMAKE_BUILD_TYPE=Release ../
     - make -j$(nproc --all) all
+    - ctest -VV
     - cd ../
   artifacts:
     name: bow_artifacts
