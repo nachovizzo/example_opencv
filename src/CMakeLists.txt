@@ -10,5 +10,3 @@ target_link_libraries(display_sifts sift_compute_lib ${OpenCV_LIBS})
 add_executable(flann_searcher flann_searcher.cpp)
 target_link_libraries(flann_searcher ${OpenCV_LIBS})
 
-add_executable(cv_as_smart_pointer cv_as_smart_pointer.cpp)
-target_link_libraries(cv_as_smart_pointer ${OpenCV_LIBS})
