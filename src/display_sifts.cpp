@@ -7,6 +7,7 @@
 #include <memory>
 
 #include <opencv2/highgui/highgui.hpp>
+
 #include "sifts.hpp"
 
 int main() {

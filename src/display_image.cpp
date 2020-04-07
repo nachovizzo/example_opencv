@@ -3,13 +3,15 @@
 // @maintainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
+
 #include <iostream>
-#include <opencv2/opencv.hpp>
+
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgcodecs.hpp>
 
 int main() {
   cv::Mat image;
-  image = cv::imread("../../img/lenna.png", CV_LOAD_IMAGE_GRAYSCALE);
-
+  image = cv::imread("../../img/lenna.png", cv::IMREAD_GRAYSCALE);
   if (image.data == nullptr) {
     std::cerr << "No image data \n";
     return -1;

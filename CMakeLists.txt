@@ -27,9 +27,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${RESULTS_OUTPUT_DIRECTORY}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${RESULTS_OUTPUT_DIRECTORY}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${RESULTS_OUTPUT_DIRECTORY}/bin)
 
-# Attempt to find OpenCV3 on your system, for more details please read
+# Attempt to find OpenCV4 on your system, for more details please read
 # /usr/share/OpenCV/OpenCVConfig.cmake
-find_package(OpenCV 3 REQUIRED)
+find_package(OpenCV 4 REQUIRED)
 if(OpenCV_FOUND)
   message(STATUS "Found OpenCV version ${OpenCV_VERSION}")
   message(STATUS "OpenCV directories: ${OpenCV_INCLUDE_DIRS}")

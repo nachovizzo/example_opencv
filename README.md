@@ -3,17 +3,13 @@
 ## Prerequisites
 
 This example suppose that you have installed **`Ubuntu 18.04`** on your dev
-machine. You need the SIFT implementation to run this code. Check if you have a
-file `nonfree.hpp` under `/usr/include/opencv2/xfeatures2d/nonfree.hpp`. If it
-is there, you're fine. Otherwise, follow the procedure below.
+machine. You need the SIFT implementation to run this code..
 
-You need to install the missing non-free version of OpenCV. To do that type the
+You need to install the missing non-free version of OpenCV4. To do that type the
 following in the terminal:
 
 ```sh
-sudo add-apt-repository --yes ppa:ignaciovizzo/opencv3-nonfree
-sudo apt-get update
-sudo apt-get install libopencv-dev libopencv-contrib-dev
+TODO: Add instructions in how to build OpenCV4
 ```
 
 ## How to Build
