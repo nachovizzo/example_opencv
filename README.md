@@ -1,4 +1,4 @@
-# OpenCV3 Example
+# OpenCV 4 Example
 
 ## Prerequisites
 
