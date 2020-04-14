@@ -4,18 +4,17 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 #include <iostream>
-#include <memory>
 
-#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
 
 #include "sifts.hpp"
 
 int main() {
-  auto descriptor_image = std::make_unique<cv::Mat>();
-  cv::Mat descriptors = ComputeSifts("../../img/lenna.png", descriptor_image);
+  auto [descriptors, image_with_kp] = ComputeSifts("../../img/lenna.png");
 
   cv::namedWindow("SIFT detections", cv::WINDOW_AUTOSIZE);
-  cv::imshow("SIFT detections", *descriptor_image);
+  cv::imshow("SIFT detections", image_with_kp);
 
   cv::namedWindow("SIFT vector as image", cv::WINDOW_AUTOSIZE);
   imshow("SIFT vector as image", descriptors);

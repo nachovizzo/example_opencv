@@ -6,12 +6,11 @@
 #ifndef SIFTS_HPP_
 #define SIFTS_HPP_
 
-#include <memory>
 #include <string>
+#include <tuple>
 
-#include <opencv2/core/core.hpp>
+#include <opencv2/core/mat.hpp>
 
-cv::Mat ComputeSifts(const std::string& fileName,
-                     const std::unique_ptr<cv::Mat>& imageWithKeypoints);
+std::tuple<cv::Mat, cv::Mat> ComputeSifts(const std::string& fileName);
 
 #endif  // SIFTS_HPP_

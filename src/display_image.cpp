@@ -6,13 +6,13 @@
 
 #include <iostream>
 
+#include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgcodecs.hpp>
 
 int main() {
-  cv::Mat image;
-  image = cv::imread("../../img/lenna.png", cv::IMREAD_GRAYSCALE);
-  if (image.data == nullptr) {
+  auto image = cv::imread("../../img/lenna.png", cv::IMREAD_GRAYSCALE);
+  if (image.empty()) {
     std::cerr << "No image data \n";
     return -1;
   }

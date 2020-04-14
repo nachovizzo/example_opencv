@@ -6,8 +6,8 @@
 
 #include "sifts.hpp"
 
-#include <memory>
 #include <string>
+#include <tuple>
 #include <vector>
 
 #include <opencv2/core.hpp>
@@ -20,10 +20,8 @@ using std::vector;
 using cv::xfeatures2d::SiftDescriptorExtractor;
 using cv::xfeatures2d::SiftFeatureDetector;
 
-cv::Mat ComputeSifts(const string& fileName,
-                     const std::unique_ptr<cv::Mat>& imageWithKeypoints) {
+std::tuple<cv::Mat, cv::Mat> ComputeSifts(const string& fileName) {
   const cv::Mat kInput = cv::imread(fileName, cv::IMREAD_GRAYSCALE);
-  cv::Mat descriptors;
 
   // detect key points
   auto detector = SiftFeatureDetector::create();
@@ -31,10 +29,13 @@ cv::Mat ComputeSifts(const string& fileName,
   detector->detect(kInput, keypoints);
 
   // present the keypoints on the image
-  drawKeypoints(kInput, keypoints, *imageWithKeypoints);
+  cv::Mat image_with_keypoints;
+  drawKeypoints(kInput, keypoints, image_with_keypoints);
 
   // extract the SIFT descriptors
+  cv::Mat descriptors;
   auto extractor = SiftDescriptorExtractor::create();
   extractor->compute(kInput, keypoints, descriptors);
-  return descriptors;
+
+  return std::make_tuple(descriptors, image_with_keypoints);
 }
