@@ -4,6 +4,7 @@
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
 
+#include <cstdlib>
 #include <iostream>
 
 #include <opencv2/core.hpp>
@@ -14,7 +15,7 @@ int main() {
   auto image = cv::imread("../../img/lenna.png", cv::IMREAD_GRAYSCALE);
   if (image.empty()) {
     std::cerr << "No image data \n";
-    return -1;
+    return EXIT_FAILURE;
   }
   cv::namedWindow("Window Name", cv::WINDOW_AUTOSIZE);
   cv::imshow("Window Name", image);
