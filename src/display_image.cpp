@@ -17,7 +17,7 @@ int main() {
     return -1;
   }
   cv::namedWindow("Window Name", cv::WINDOW_AUTOSIZE);
-  imshow("Window Name", image);
+  cv::imshow("Window Name", image);
 
   cv::waitKey(0);
 
