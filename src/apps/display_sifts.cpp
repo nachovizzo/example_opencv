@@ -8,7 +8,7 @@
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 
-#include "sifts.hpp"
+#include "sift_compute/sifts.hpp"
 
 int main() {
   auto [descriptors, image_with_kp] = ComputeSifts("../../img/lenna.png");

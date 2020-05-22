@@ -32,7 +32,7 @@ build:
     - ctest -VV
     - cd ../
   artifacts:
-    name: bow_artifacts
+    name: opencv_artifacts
     expire_in: 1 week
     paths:
       - results/

@@ -3,8 +3,8 @@
 // @maintainer Ignacio Vizzo     [ivizzo@uni-bonn.de]
 //
 // Copyright (c) 2018 Igor Bogoslavskyi, all rights reserved
-#ifndef SIFTS_HPP_
-#define SIFTS_HPP_
+#ifndef SIFT_COMPUTE_SIFTS_HPP_
+#define SIFT_COMPUTE_SIFTS_HPP_
 
 #include <string>
 #include <tuple>
@@ -13,4 +13,4 @@
 
 std::tuple<cv::Mat, cv::Mat> ComputeSifts(const std::string& fileName);
 
-#endif  // SIFTS_HPP_
+#endif  // SIFT_COMPUTE_SIFTS_HPP_
