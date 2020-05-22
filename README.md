@@ -2,6 +2,18 @@
 
 ## Prerequisites
 
+You need to install some dependencies on your system before installing `OpenCV4`
+
+```sh
+sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
+    libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
+    libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
+    gfortran openexr libatlas-base-dev python3-dev python3-numpy \
+    libtbb2 libtbb-dev libdc1394-22-dev
+```
+
+## Install OpenCV4 from source
+
 This example suppose that you have installed **`Ubuntu 18.04`** on your dev
 machine. You need the SIFT implementation to run this code...
 
