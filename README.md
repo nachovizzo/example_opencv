@@ -27,7 +27,7 @@ git clone https://github.com/opencv/opencv.git -b 4.3.0
 git clone https://github.com/opencv/opencv_contrib.git -b 4.3.0
 mkdir opencv/build && cd opencv/build
 cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
-make -j && sudo make install
+make -j$(nproc --all) && sudo make install
 ```
 
 ## How to Build the examples on this repository
